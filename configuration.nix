@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -107,6 +106,8 @@
   	cowsay
 	cmatrix
 	vim
+	ninja
+	libreoffice-fresh
 	brightnessctl
 	wget
 	neovim
@@ -131,12 +132,12 @@
 	pamixer
 	wl-clipboard
 	browsers
+	# ladybird
 	librewolf
 	chromium
 	ungoogled-chromium
 	vivaldi
 	mullvad-browser
-	ladybird
 	brave
 	vscode-fhs
 	arduino-ide
@@ -149,7 +150,14 @@
 	bat
 	python314Full
 	dart
+	grim
+	slurp
+	hyprshot
+	vlc
+	ani-cli
   ];
+
+  programs.ladybird.enable=true;
 
   programs.git = {
   	enable=true;
