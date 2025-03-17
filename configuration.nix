@@ -7,6 +7,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./flatpak.nix
     ];
 
   # Bootloader.
@@ -138,10 +139,11 @@
 	ungoogled-chromium
 	vivaldi
 	mullvad-browser
+	# arc-browser
 	brave
 	vscode-fhs
 	arduino-ide
-	steam
+	# steam
 	rustup
 	xclip
 	tealdeer
@@ -155,9 +157,15 @@
 	hyprshot
 	vlc
 	ani-cli
+	heroic
+	gogdl
+	qucs-s
+	logisim-evolution
   ];
 
   programs.ladybird.enable=true;
+  programs.steam.enable=true;
+  # programs.arc-browser.enable=true;
 
   programs.git = {
   	enable=true;
@@ -170,6 +178,8 @@
   	enable = true;
 	xwayland.enable = true;
   };
+
+  services.flatpak.enable = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
